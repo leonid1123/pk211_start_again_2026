@@ -5,14 +5,19 @@
     <title>FLASK</title>
 </head>
 <body>
-<a href="/p2">На вторую</a>
-<h1>Заголовок</h1>
-<h3>Маленький заголовок</h3>
-<p>{{par1}}</p>
-<p>Это еще один</p>
-<ul>
-    <li>раз</li>
-    <li>два</li>
-</ul>
+
+{% for item in par1 %}
+    <p>Название: {{item[1]}}</p>
+    <p>Гарантия: {{item[2]}} месяцев</p>
+    <p>Цена: {{item[3]}}руб.</p>
+{% endfor %}
+
+<form method="post">
+    <input type="text" name="c_name">
+    <input type="number" name="c_war">
+    <input type="number" name="c_price">
+    <input type="submit" value="Добавить">
+</form>
+
 </body>
 </html>
